@@ -109,7 +109,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <div class="form-group" style="display: none" id="form-keterangan">
+                                <div class="form-group" id="form-keterangan">
                                     <label class="form-label">Keterangan</label>
                                     <textarea name="keterangan" id="keterangan" rows="3" class="form-control"></textarea>
                                 </div>

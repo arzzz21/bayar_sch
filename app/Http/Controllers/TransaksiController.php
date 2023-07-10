@@ -134,6 +134,7 @@ class TransaksiController extends Controller
             $data->siswa_id = $request->siswa_id;
             $data->tagihan_id = $request->tagihan[$key];
             $data->bayar = $request->jml[$key];
+            $data->keterangan = $request->keterangan;
             $data->save();
         }
 
@@ -177,7 +178,7 @@ class TransaksiController extends Controller
             $transaksi = Transaksi::join('tagihan','tagihan.id','=','transaksi.tagihan_id')
                         ->join('siswa','siswa.id','=','transaksi.siswa_id')
                         ->join('kelas','kelas.id','=','siswa.kelas_id')
-                        ->select('siswa.nama as nama_siswa','siswa.nis as nis_siswa','kelas.nama as kelas_siswa','tagihan.nama as nama_tagihan','transaksi.id','transaksi.created_at','transaksi.diskon','transaksi.bayar')
+                        ->select('siswa.nama as nama_siswa','siswa.nis as nis_siswa','kelas.nama as kelas_siswa','tagihan.nama as nama_tagihan','transaksi.id','transaksi.created_at','transaksi.diskon','transaksi.bayar','transaksi.keterangan')
                         ->whereIn('transaksi.transaksi_id', $ids)
                         ->get();
             foreach ($transaksi as $nomor_urut => $item_urutan) {

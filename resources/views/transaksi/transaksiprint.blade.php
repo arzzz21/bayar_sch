@@ -101,7 +101,7 @@
                                 <td style="width: 20%;">Rp. <span id="total">{{ format_idr($total) }}</span></td>
                             </tr> --}}
                             <tr style="border-top: 1px solid black;">
-                                <td style="width: 75%; padding-top:10px;"></td>
+                                <td style="width: 75%; padding-top:10px; font-size: 16px;">Ket : {{ ($item->keterangan) }}</td>
                                 <td style="width: 25%;text-align: left; padding-top:10px;">
                                     <b>Tanda Terima</b>
                                     {{-- <br>

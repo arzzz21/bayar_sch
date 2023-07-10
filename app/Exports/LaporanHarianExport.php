@@ -24,9 +24,9 @@ class LaporanHarianExport implements FromView
                         ->join('siswa','siswa.id','=','transaksi.siswa_id')
                         ->join('kelas','kelas.id','=','siswa.kelas_id')
                         // ->join('tagihan','tagihan.id','=','transaksi.tagihan_id')
-                        ->select('transaksi.transaksi_id','siswa.id as id_siswa','siswa.nama as nama_siswa','kelas.nama as nama_kelas')
+                        ->select('transaksi.transaksi_id','siswa.id as id_siswa','siswa.nis as nis_siswa','siswa.nama as nama_siswa','kelas.nama as nama_kelas')
                         ->whereDate('transaksi.created_at', $this->date)
-                        ->groupBy('transaksi.transaksi_id','siswa.id','siswa.nama','kelas.nama')
+                        ->groupBy('transaksi.transaksi_id','siswa.id','siswa.nis','siswa.nama','kelas.nama')
                         ->get();
 
         $transaksi = Transaksi::orderBy('transaksi.tagihan_id','asc')

@@ -5,6 +5,7 @@
     <thead style="border: 1px solid black;">
     <tr>
         <th><b>Tanggal</b></th>
+        <th><b>NIS</b></th>
         <th><b>Nama</b></th>
         {{-- <th><b>Pembayaran</b></th> --}}
         @foreach ($data['tagihan'] as $index => $tagih)
@@ -20,6 +21,7 @@
                 <td>
                     {{ $data['transaksi'][$index]->created_at->format('d-m-Y') }}
                 </td>
+                <td>{{ $item->nis_siswa }}</td>
                 <td>{{ $item->nama_siswa." (".$item->nama_kelas.")" }}</td>
                 @foreach ($data['transaksi'] as $tar)
                     @if ($tar->id_siswa == $item->id_siswa)
